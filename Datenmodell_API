@@ -1,0 +1,199 @@
+
+[
+  {
+    _id: _User,
+
+    objectId: string,
+
+    updatedAt: date,
+
+    createdAt: date,
+
+    username: string,
+
+    email: string,
+
+    emailVerified: boolean,
+
+    phone: string,
+
+    customerProfile:  *CustomerProfile
+  },
+  {
+    _id: Store,
+
+    objectId: string,
+
+    updatedAt: date,
+
+    createdAt: date,
+
+    country: object,
+
+    city: object,
+
+    address: object,
+
+    loc: object,
+
+    storeDetails: object,
+
+    openingNote: object,
+
+    openings: array,
+
+    rawId: string,
+
+    phone: string,
+
+    storeHeadline: string
+  },
+  {
+    _id: Coupon,
+
+    objectId: string,
+
+    updatedAt: date,
+
+    createdAt: date,
+
+    couponCampaign:  *,
+  },
+  {
+    _id: News,
+
+    objectId: string,
+
+    updatedAt: date,
+
+    createdAt: date,
+
+    sourceCreationTime: date,
+
+    source: string,
+
+    sharedUrl: object,
+
+    sourceId: string,
+
+    message: string,
+
+    imageUrl: string,
+
+    link: string,
+
+    type: string,
+
+    sourceUpdateTime: string,
+
+    imageWidth: number,
+
+    previewImageUrl: string,
+
+    videoUrl: string,
+
+    imageHeight: number,
+
+    previewImageWidth: number,
+
+    previewImageHeight: number,
+
+    description: string
+  },
+  {
+    _id: CustomerProfile,
+
+    objectId: string,
+
+    updatedAt: date,
+
+    createdAt: date,
+
+    size: String,
+
+    lastName: String,
+
+    sex : String,
+
+    customerAdress: Adress,
+
+    image: Image,
+
+    firstName: String,
+
+    birthday: Date
+
+    coupons: [Coupons]
+  },
+
+  {
+    _id: Installation,
+
+    deviceType : iOS/android,
+
+    appVersion: String,
+
+    user: User,
+
+    timeZone: String,
+
+    localIdentifier: String(us_EN, de_DE)
+  }
+  {
+    _id: Product,
+
+    objectId: string,
+
+    updatedAt: date,
+
+    createdAt: date,
+
+    article_number: string,
+
+    imageUrl: string,
+
+    currency: string,
+
+    price: string,
+
+    sku: string,
+
+    title: string,
+
+    enabled: boolean,
+
+    categories: array,
+
+    brand:  *
+  },
+  {
+    _id: Brand,
+
+    objectId: string,
+
+    updatedAt: date,
+
+    createdAt: date,
+
+    products: array,
+
+    categories: array,
+
+    title: string,
+
+    imageUrl: string
+  },
+  {
+    _id: Category,
+
+    objectId: string,
+
+    updatedAt: date,
+
+    createdAt: date,
+
+    products: array,
+
+    title: string
+  }
+]

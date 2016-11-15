@@ -1,0 +1,23 @@
+<template>
+  
+  <h2 class="title is-2">There are ${userCount} users registered.</h2>
+  
+  <table class="table is-striped">
+  <thead>
+    <tr>
+      <th>Gender</th>
+      <th>Number of registered users</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr repeat.for="gender of genders">
+      <td>${gender.gender}</td>
+      <td>${gender.count}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div id="chart"></div>
+  
+</template>
