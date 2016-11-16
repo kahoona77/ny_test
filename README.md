@@ -5,7 +5,7 @@ Der "Test API Client" ist eine WebApplication welche die [New Yorker Test API](h
 
 ## Web-app
 
-Bei der WebApp handelt es sich um eine SinglePageApplication (SPA), die mit (Aurelia)[http://aurelia.io/]  erstellet wurde. Folgende Framworks / Libraries werden verwendet:
+Bei der WebApp handelt es sich um eine SinglePageApplication (SPA), die mit (Aurelia)[http://aurelia.io/] in Typescript erstellet wurde. Folgende Framworks / Libraries werden verwendet:
 
  * __[Aurelia](http://aurelia.io/)__: Basis-SPA-Framework
  * __[Bulma](http://bulma.io/)__: CSS-Framework basierend aub Flexbox
@@ -35,4 +35,12 @@ au run --watch
 ``` 
 
 Auf [http://localhost:9000](http://localhost:9000) ist die WebApp verfügbar.
+
+
+### Aufbau der Anwendung
+Die Anwedung besteht aus drei Hauptkomponenten, die jeweils im `src` Ordner zu finden sind. Jede der Komponenten verfügt über eine HTML-Datei, die die Darstellung der Komponente beschreibt.
+
+ * __[app.ts](./src/app.ts)__: Die Basis-komponente der Anwendung. Ist für das Routing und die initialisierung des Parse SDK zuständig
+ * __[login.ts](./src/login.ts)__: Die Login-Seite
+ * __[home.ts](./src/home.ts)__: Die Inhaltsseite mit den Informationen über die angemeldeten Benutzer
 

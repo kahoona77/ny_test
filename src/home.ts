@@ -6,6 +6,10 @@ import 'parse';
 const Parse = require('parse')
 const c3 = require('c3')
 
+/* 
+ *   The "Home"-Page. The only content-page in this app. 
+ *   Shows the gender diversion of all registered users in a table and a pie-chart 
+*/
 @inject (HttpClient)
 export class Home {
 
@@ -20,6 +24,7 @@ export class Home {
         this.loadUsers();
     }
 
+    /* Loads all user profiles from the parse Server*/
     loadUsers () {
        let CustomerProfile = Parse.Object.extend("CustomerProfile");
        let query = new Parse.Query(CustomerProfile);
@@ -32,6 +37,7 @@ export class Home {
         });
     }
 
+    /* Iterates over the given profiles, counts all genders and save the result in the genders list */
     createGenderList (profiles) {
         for (let profile of profiles) {
             let sex = profile.get('sex');
@@ -47,6 +53,7 @@ export class Home {
         }
     }
 
+    /* Draws the gender pie-chart */
     drawChart () {
         c3.generate({
             bindto: '#chart',
@@ -57,6 +64,7 @@ export class Home {
         });
     }
 
+    /* Transforms the genders list into a dataSet that can used in the chart */
     createChartData () {
         let data:Array<any> = [];
         for (let gender of this.genders) {

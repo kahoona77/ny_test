@@ -1,3 +1,42 @@
 <template>
-    g
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Login
+                </h1>
+                <h2 class="subtitle">
+                    Welcome. Please enter your Email address and your password.
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <div class="container columns">
+        <div class="column is-8 is-offset-2">
+            <form class="">
+                <p class="control has-icon">
+                    <input value.bind="username" class="input" type="email" placeholder="Email">
+                    <i class="fa fa-envelope"></i>
+                </p>
+                <p class="control has-icon">
+                    <input value.bind="password" class="input" type="password" placeholder="Password">
+                    <i class="fa fa-lock"></i>
+                </p>
+                <p class="control">
+                    <button click.delegate="login()" class="button is-medium is-pulled-right">
+                        Login
+                    </button>
+                </p>
+            </form>
+        </div>
+    </div>
+    
+    <div class="container columns">
+        <div class="column is-8 is-offset-2">
+            <div if.bind="errorMsg" class="notification is-danger">
+                <button click.delegate="clearError()" class="delete"></button> ${errorMsg}
+            </div>
+        </div>
+    </div>
 </template>

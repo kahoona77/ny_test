@@ -1,7 +1,7 @@
 <template>
   <require from="./app.css"></require>
-  <div class="container">
-  
+  <div>
+
     <section class="hero is-dark is-bold">
       <div class="hero-body">
         <div class="container">
@@ -15,20 +15,20 @@
       </div>
     </section>
 
-    <nav class="nav has-shaddow">
-      
+    <nav if.bind="currentUser" class="nav has-shaddow">
       <div class="nav-right nav-menu">
         <div class="nav-item">
-          <i class="fa fa-user" aria-hidden="true"></i> You are logged in as ''
+          <i class="fa fa-user" aria-hidden="true"></i> You are logged in as '${currentUser.get('username')}'
         </div>
-        <a class="nav-item" href="#">
+        <a class="nav-item" href="#" click.delegate="logout()">
           <i class="fa fa-sign-out" aria-hidden="true"></i> Log Out
         </a>
       </div>
     </nav>
 
+    <div class="content">
+      <router-view></router-view>
+    </div>
 
-
-    <router-view></router-view>
   </div>
 </template>
