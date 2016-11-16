@@ -1,10 +1,11 @@
 <template>
   <require from="./app.css"></require>
   <div class="container">
+  
     <section class="hero is-dark is-bold">
       <div class="hero-body">
         <div class="container">
-          <h1 class="title">
+          <h1 class="title is-1">
             New Yorker - App Test
           </h1>
           <h2 class="subtitle">
@@ -13,6 +14,21 @@
         </div>
       </div>
     </section>
+
+    <nav class="nav has-shaddow">
+      
+      <div class="nav-right nav-menu">
+        <div class="nav-item">
+          <i class="fa fa-user" aria-hidden="true"></i> You are logged in as ''
+        </div>
+        <a class="nav-item" href="#">
+          <i class="fa fa-sign-out" aria-hidden="true"></i> Log Out
+        </a>
+      </div>
+    </nav>
+
+
+
     <router-view></router-view>
   </div>
 </template>

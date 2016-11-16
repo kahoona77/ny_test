@@ -1,4 +1,3 @@
-
 import {inject} from 'aurelia-framework'
 import {HttpClient} from 'aurelia-http-client';
 import 'c3';
@@ -11,11 +10,7 @@ const c3 = require('c3')
 export class Home {
 
     public userCount: number = 0;
-    public genders:Array<any> = [
-        {gender: 'male', count: 5},
-        {gender: 'female', count: 8},
-        {gender: 'something', count: 3},
-    ];
+    public genders:Array<any> = [];
 
     constructor (private httpClient: HttpClient) {
         this.httpClient = httpClient;
@@ -26,18 +21,34 @@ export class Home {
     }
 
     loadUsers () {
-        var query = new Parse.Query(Parse.User);
+       let CustomerProfile = Parse.Object.extend("CustomerProfile");
+       let query = new Parse.Query(CustomerProfile);
         query.find({
-            success: (users) => {
-                 this.userCount = users.length;
+            success: (profiles) => {
+                 this.userCount = profiles.length;
+                 this.createGenderList(profiles);
                  this.drawChart();
-                 console.log(users);
             }
         });
     }
 
+    createGenderList (profiles) {
+        for (let profile of profiles) {
+            let sex = profile.get('sex');
+            if (sex == undefined) {
+                sex = 'Not defined';
+            }
+            let genderCount = this.genders.find(it => it.gender == sex);
+            if (!genderCount) {
+                genderCount = {gender: sex, count: 0};
+                this.genders.push(genderCount);
+            }
+            genderCount.count++;
+        }
+    }
+
     drawChart () {
-        var chart = c3.generate({
+        c3.generate({
             bindto: '#chart',
             data: {
                 type : 'pie',
