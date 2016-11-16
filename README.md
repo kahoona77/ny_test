@@ -5,7 +5,7 @@ Der "Test API Client" ist eine WebApplication welche die [New Yorker Test API](h
 
 ## Web-app
 
-Bei der WebApp handelt es sich um eine SinglePageApplication (SPA), die mit (Aurelia)[http://aurelia.io/] in Typescript erstellet wurde. Folgende Framworks / Libraries werden verwendet:
+Bei der WebApp handelt es sich um eine SinglePageApplication (SPA), die mit [Aurelia](http://aurelia.io/) in [Typescript](https://www.typescriptlang.org/) erstellet wurde. Folgende Framworks / Libraries werden verwendet:
 
  * __[Aurelia](http://aurelia.io/)__: Basis-SPA-Framework
  * __[Bulma](http://bulma.io/)__: CSS-Framework basierend aub Flexbox
@@ -15,8 +15,8 @@ Bei der WebApp handelt es sich um eine SinglePageApplication (SPA), die mit (Aur
 
 ### Starten der Anwendung
 
-Zum starten der Entwicklungsugebung wird das Aurelia CLI (Command Line Interface) verwendet. Diese setzt vorroaus das Node.js und ein Git Client installiert sind. 
-Anschließend kann Aurelia CLI mit dem folgenden Beefehl installiert werden:
+Als Build-Tool wird das Aurelia CLI (Command Line Interface) verwendet. Diese setzt vorraus, dass Node.js und ein Git-Client installiert sind. 
+Anschließend kann Aurelia CLI mit dem folgenden Befehl installiert werden:
 
 ```sh
 npm install aurelia-cli -g
@@ -28,7 +28,7 @@ Nun müssen die Projekt-Dependencies mit npm installiert werden:
 npm install
 ``` 
 
-Jetzt kann das die Entwicklungsugebung gestartet werden:
+Jetzt kann der Build und Entwicklungsserver gestartet werden:
 
 ```sh
 au run --watch
