@@ -53,6 +53,7 @@ export class App {
   /* Logs the currentUser out of the parse-server and redirects to the login-page. */
   logout() {
     Parse.User.logOut();
+    this.currentUser = null;
     this.router.navigate('login')
   }
 }

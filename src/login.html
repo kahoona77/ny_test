@@ -12,8 +12,8 @@
         </div>
     </section>
 
-    <div class="container columns">
-        <div class="column is-8 is-offset-2">
+    <div class="columns">
+        <div class="column is-6 is-offset-3">
             <form class="">
                 <p class="control has-icon">
                     <input value.bind="username" class="input" type="email" placeholder="Email">
@@ -31,9 +31,9 @@
             </form>
         </div>
     </div>
-    
-    <div class="container columns">
-        <div class="column is-8 is-offset-2">
+
+    <div class="columns">
+        <div class="column is-6 is-offset-3">
             <div if.bind="errorMsg" class="notification is-danger">
                 <button click.delegate="clearError()" class="delete"></button> ${errorMsg}
             </div>
